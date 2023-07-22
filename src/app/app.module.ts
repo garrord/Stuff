@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.co
 import { CategoriesContainer } from './containers/categories/categories.container';
 import { CategoryComponent } from './components/categories/category.component';
 import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuestionsContainer } from './containers/questions/questions.container';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     WelcomeComponent,
     PageNotFoundComponent,
     CategoryComponent,
-    CategoriesContainer
+    CategoriesContainer,
+    QuestionsContainer
   ],
   imports: [
     MatButtonModule,
@@ -32,13 +33,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         path:'categories', component: CategoriesContainer
       },
       {
+        path:'questions/:category', component: QuestionsContainer
+      },
+      {
         path:'', redirectTo: 'welcome', pathMatch: 'full'
       },
       {
         path:'**', component: PageNotFoundComponent
       },
     ])
-    //BrowserAnimationsModule,
   ],
   providers: [
     CategoryService,

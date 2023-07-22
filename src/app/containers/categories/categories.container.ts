@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CategoryService } from '../../services/category.service';
 import { CategoryModel } from "../../models/categoryModel";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'categories-container',
@@ -9,7 +10,9 @@ import { CategoryModel } from "../../models/categoryModel";
 
 export class CategoriesContainer implements OnInit{
 
-    constructor(private categoryService: CategoryService){}
+    constructor(
+        private categoryService: CategoryService,
+        private router: Router){}
 
     categories: CategoryModel[] = [];
 
@@ -18,6 +21,6 @@ export class CategoriesContainer implements OnInit{
     }
 
     getQuestions(category: string){
-        console.log("hello from the container " + category);
+        this.router.navigate(['questions', category]);
     }
 }
