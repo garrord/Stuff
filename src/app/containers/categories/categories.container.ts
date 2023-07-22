@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { CategoryService } from '../services/category.service';
-import { CategoryModel } from "../models/categoryModel";
+import { CategoryService } from '../../services/category.service';
+import { CategoryModel } from "../../models/categoryModel";
 
 @Component({
     selector: 'categories-container',
@@ -15,5 +15,9 @@ export class CategoriesContainer implements OnInit{
 
     ngOnInit(): void {
         this.categoryService.GetAllCategories().subscribe(x => this.categories = x);
+    }
+
+    getQuestions(category: string){
+        console.log("hello from the container " + category);
     }
 }

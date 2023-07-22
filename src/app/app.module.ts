@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './services/category.service';
-import { QuestionsService } from './Services/questions.service'; 
+import { QuestionsService } from './services/questions.service'; 
 import { RouterModule } from '@angular/router';
-import { WelcomeComponent } from './components/welcome.component';
-import { PageNotFoundComponent } from './components/pageNotFound.component';
-import { CategoriesContainer } from './containers/categories.container';
-import { CategoryComponent } from './components/category.component';
-import {MatButtonModule} from '@angular/material/button';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.component';
+import { CategoriesContainer } from './containers/categories/categories.container';
+import { CategoryComponent } from './components/categories/category.component';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -37,8 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       {
         path:'**', component: PageNotFoundComponent
       },
-    ]),
-    BrowserAnimationsModule,
+    ])
+    //BrowserAnimationsModule,
   ],
   providers: [
     CategoryService,

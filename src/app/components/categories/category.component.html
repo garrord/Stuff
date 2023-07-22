@@ -1,0 +1,9 @@
+<div id="categories">
+    <button  
+        (click)="toQuestions(category.categoryName)" 
+        *ngFor="let category of categories" 
+        mat-fab extended 
+        color="primary">
+        {{ category.categoryName }}
+    </button>
+</div>

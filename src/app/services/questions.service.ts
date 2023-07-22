@@ -9,7 +9,7 @@ export class QuestionsService{
 
     constructor(protected http: HttpClient){}
 
-    public GetQuestionsByCategoryName() : Observable<QuestionModel>{
-        return this.http.get<QuestionModel>(`${this.questionUrl}/category`);
+    public GetQuestionsByCategoryName() : Observable<QuestionModel[]>{
+        return this.http.get<QuestionModel[]>(`${this.questionUrl}/category`);
     }
 }
